@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ButtonLogin from '../components/buttonLogin';
 import InputLogin from '../components/inputLogin';
-import userLogin from '../redux/actions';
+import { userLogin } from '../redux/actions';
 
 class Login extends React.Component {
   constructor() {
