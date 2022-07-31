@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { requestValuesApi, requestApi } from '../redux/actions';
 
 class ButtonForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       id: 0,
     };

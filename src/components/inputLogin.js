@@ -11,7 +11,7 @@ class InputLogin extends React.Component {
           type="email"
           name="email"
           onChange={ handleInputChange }
-          placeholder="alguem@email.com"
+          placeholder="Email"
           data-testid="email-input"
           value={ email }
         />

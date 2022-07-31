@@ -20,7 +20,7 @@ class SelectForm extends Component {
               <option
                 key={ index }
                 value={ value }
-                data-testid={ value }
+                // data-testid={ value }
               >
                 { value }
               </option>

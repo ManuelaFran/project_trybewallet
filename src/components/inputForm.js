@@ -12,6 +12,7 @@ class InputForm extends React.Component {
           value={ value }
           data-testid="value-input"
           onChange={ handleInputChange }
+          placeholder="Valor"
         />
 
         <input
@@ -20,6 +21,7 @@ class InputForm extends React.Component {
           value={ description }
           data-testid="description-input"
           onChange={ handleInputChange }
+          placeholder="Descrição"
         />
       </div>
     );
