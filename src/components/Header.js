@@ -21,7 +21,7 @@ class Header extends Component {
           <span data-testid="email-field">{ `Email: ${userEmail}` }</span>
           {' '}
           <span data-testid="total-field">
-            { `Despesa total: R$${despesaTotal}` }
+            { despesaTotal }
           </span>
           {' '}
           <span data-testid="header-currency-field">{ walletCurrency }</span>
