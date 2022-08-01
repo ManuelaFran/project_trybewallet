@@ -13,7 +13,7 @@ class WalletForm extends Component {
       value: '',
       description: '',
       currency: 'USD',
-      paymentMethod: 'Dinheiro',
+      method: 'Dinheiro',
       tag: alimentacao,
     };
 
@@ -31,8 +31,8 @@ class WalletForm extends Component {
   async onClick(target) {
     console.log(target.value);
     const { expenseDispatch } = this.props;
-    const { id, value, description, currency, paymentMethod, tag } = this.state;
-    const objeto = { id, value, description, currency, paymentMethod, tag };
+    const { id, value, description, currency, method, tag } = this.state;
+    const objeto = { id, value, description, currency, method, tag };
     expenseDispatch(objeto);
     this.setState({ id: id + 1 });
     // const addRates = await ratesDispatch();
@@ -45,7 +45,7 @@ class WalletForm extends Component {
       value: '',
       description: '',
       currency: 'USD',
-      paymentMethod: 'Dinheiro',
+      method: 'Dinheiro',
       tag: alimentacao,
     });
   }
@@ -57,7 +57,7 @@ class WalletForm extends Component {
   }
 
   render() {
-    const { value, description, currency, paymentMethod, tag } = this.state;
+    const { value, description, currency, method, tag } = this.state;
     const { valueCurrencies } = this.props;
     return (
       <div>
@@ -103,8 +103,8 @@ class WalletForm extends Component {
             Método de pagamento:
             <select
               id="payment-method"
-              name="paymentMethod"
-              value={ paymentMethod }
+              name="method"
+              value={ method }
               data-testid="method-input"
               onChange={ this.handleInputChange }
             >
