@@ -6,6 +6,7 @@ export const userLogin = (payload) => ({ type: USER_LOGIN, payload });
 
 // Req3 Puxa os valores da chave currencies através de uma Requisisão à API
 export const requestValues = (payload) => ({ type: REQUEST_VALUES, payload });
+
 // Req4 Faz ums requisição à API e busca a cotação no momento que o botão de Adicionar despesa for apertado.
 export const userExpense = (payload) => ({
   type: USER_EXPENSE,
