@@ -1,25 +1,30 @@
 // Coloque aqui suas actions
-// import fetchApi from '../../service/fetchApi';
-import { USER_LOGIN, USER_EXPENSE, REQUEST_VALUES } from './actionTypes';
+import { USER_LOGIN, USER_EXPENSE, REQUEST_VALUES, DELETE_EXPENSES } from './actionTypes';
 
-export const userLogin = (payload) => ({ type: USER_LOGIN, payload });
+export const userLogin = (payload) => ({
+  type: USER_LOGIN,
+  payload,
+});
 
 // Req3 Puxa os valores da chave currencies através de uma Requisisão à API
-export const requestValues = (payload) => ({ type: REQUEST_VALUES, payload });
+export const requestValues = (payload) => ({
+  type: REQUEST_VALUES,
+  payload,
+});
 
-// Req4 Faz ums requisição à API e busca a cotação no momento que o botão de Adicionar despesa for apertado.
+// Req4 Faz uma requisição à API e busca a cotação no momento que o botão de Adicionar despesa for apertado.
 export const userExpense = (payload) => ({
   type: USER_EXPENSE,
   payload,
   price: Number(payload.value) * Number(payload.exchangeRates[payload.currency].ask),
 });
 
-// export const requestValuesApi = () => (dispatch) => fetchApi()
-//   .then((data) => dispatch(requestValues(Object.keys(data)
-//     .filter((value) => value !== 'USDT'))));
-
-// export const requestApi = () => () => fetchApi()
-//   .then((data) => data);
+export const deleteExpenses = (payload) => ({
+  type: DELETE_EXPENSES,
+  delete: payload,
+  price: payload.reduce((acc, cur) => Number(acc) + (Number(cur.value) * Number(cur
+    .exchangeRates[cur.currency].ask)), 0),
+});
 
 export function requestValuesApi() {
   return async (dispatch) => {

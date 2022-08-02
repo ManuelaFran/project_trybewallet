@@ -35,8 +35,6 @@ class WalletForm extends Component {
     const objeto = { id, value, description, currency, method, tag };
     expenseDispatch(objeto);
     this.setState({ id: id + 1 });
-    // const addRates = await ratesDispatch();
-    // const result = { ...states, id, addRates };
     this.setChange();
   }
 

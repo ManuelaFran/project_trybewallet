@@ -19,4 +19,17 @@ describe('Testando o componente WalletForm', () => {
     const button = getByRole('button', { name: /adicionar despesa/i });
     expect(button).toBeDefined();
   });
+  it('testa se o campo "total" muda depois que a despesa for adicionada', () => {
+        const { getByTestId, getByRole } = renderWithRouterAndRedux(<WalletForm />);
+        const value = getByTestId('value-input');
+        const description = getByTestId('description-input');
+        userEvent.type(value, '3000');
+        expect(value.value).toBe('3000');
+        userEvent.type(description, 'computador');
+        expect(description.value).toBe('computador');
+        const button = getByRole('button', { name: /adicionar despesa/i });
+        userEvent.click(button);
+        expect(value.value).toBe('');
+        expect(description.value).toBe('');
+      });
 });

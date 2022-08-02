@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import totalExpense from '../tests/helpers/totalExpense';
 
 class Header extends Component {
   constructor() {
@@ -18,7 +17,7 @@ class Header extends Component {
     return (
       <div>
         <header>
-          <span data-testid="email-field">{ `Email: ${userEmail}` }</span>
+          <span data-testid="email-field">{ userEmail }</span>
           {' '}
           <span data-testid="total-field">
             { despesaTotal }
