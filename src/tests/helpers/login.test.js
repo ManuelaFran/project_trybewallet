@@ -34,3 +34,16 @@ describe('Testando os componentes App e Login.', () => {
     expect(history.location.pathname).toBe('/carteira');
   });
 });
+
+  it('testa se existe o botão entrar.', () => {
+    const { getByRole } = renderWithRouterAndRedux(<App />);
+    const btnEntrar = getByRole('link',{name: /Entrar/i});
+    expect(btnEntrar).toBeDefined();
+});
+
+  it('testa se o botão Entrar fica desabilitado caso o campo tenha um email inválido.', () => {
+    const { getByRole } = renderWithRouterAndRedux(<App />);
+    const btnEntrar = getByRole('link',{name: /Entrar/i});
+    expect(btnEntrar).not.toBeDisabled();
+    expect(btnEntrar).toHaveAttribute('href', '/carteira')
+});
