@@ -70,7 +70,6 @@ describe('Testando o componente WalletForm', () => {
     expect(secondDescription).toBeInTheDocument();
     
     const deleteExpBtns = await findAllByRole('button', {name: 'Excluir'});
-    // console.log(deleteExpBtns);
     userEvent.click(deleteExpBtns[0]);
     const firstExpense = queryByRole('cell', { name: /2\.00/i })
     expect(firstExpense).not.toBeInTheDocument();
